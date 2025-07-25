@@ -1,0 +1,151 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}ติดต่อ - Portfolio{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="glass p-5">
+            <h2 class="text-center text-white mb-5">ติดต่อฉัน</h2>
+            <p class="text-center text-white mb-5">
+                หากคุณมีโปรเจ็กต์ที่น่าสนใจ หรือต้องการสอบถามข้อมูลเพิ่มเติม 
+                กรุณากรอกแบบฟอร์มด้านล่าง ผมจะติดต่อกลับเร็วที่สุด
+            </p>
+            
+            <form method="post" class="contact-form">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label text-white">ชื่อ-นามสกุล *</label>
+                        <input type="text" class="form-control" id="name" name="name" 
+                               placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label text-white">อีเมล *</label>
+                        <input type="email" class="form-control" id="email" name="email" 
+                               placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label text-white">หัวข้อ</label>
+                    <input type="text" class="form-control" id="subject" name="subject" 
+                           placeholder="หัวข้อที่ต้องการติดต่อ">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="form-label text-white">ข้อความ *</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" 
+                              placeholder="กรุณากรอกข้อความที่ต้องการสื่อสาร..." required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-custom">
+                        <i class="fas fa-paper-plane me-2"></i>ส่งข้อความ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Info Section -->
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card-custom h-100 p-4 text-center">
+            <i class="fas fa-map-marker-alt fa-3x mb-3 text-warning"></i>
+            <h5 class="text-white">ที่อยู่</h5>
+            <p class="text-white-50">
+                123 ถนนสุขุมวิท<br>
+                กรุงเทพมหานคร 10110<br>
+                ประเทศไทย
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card-custom h-100 p-4 text-center">
+            <i class="fas fa-phone fa-3x mb-3 text-warning"></i>
+            <h5 class="text-white">โทรศัพท์</h5>
+            <p class="text-white-50">
+                +66 81-234-5678<br>
+                <small>จันทร์-ศุกร์ 9:00-18:00</small>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card-custom h-100 p-4 text-center">
+            <i class="fas fa-envelope fa-3x mb-3 text-warning"></i>
+            <h5 class="text-white">อีเมล</h5>
+            <p class="text-white-50">
+                contact@portfolio.com<br>
+                <small>ตอบกลับภายใน 24 ชม.</small>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Social Media Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="glass p-4 text-center">
+            <h4 class="text-white mb-4">ติดตามฉันได้ที่</h4>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#" class="btn-custom d-inline-flex align-items-center">
+                    <i class="fab fa-facebook-f me-2"></i>Facebook
+                </a>
+                <a href="#" class="btn-custom d-inline-flex align-items-center">
+                    <i class="fab fa-twitter me-2"></i>Twitter
+                </a>
+                <a href="#" class="btn-custom d-inline-flex align-items-center">
+                    <i class="fab fa-linkedin-in me-2"></i>LinkedIn
+                </a>
+                <a href="#" class="btn-custom d-inline-flex align-items-center">
+                    <i class="fab fa-github me-2"></i>GitHub
+                </a>
+                <a href="#" class="btn-custom d-inline-flex align-items-center">
+                    <i class="fab fa-instagram me-2"></i>Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Map Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="glass p-4">
+            <h4 class="text-white text-center mb-4">แผนที่</h4>
+            <div class="ratio ratio-21x9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.6936100506544!2d100.54087731529153!3d13.736717190356826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ee109842dc1%3A0x9b90f0b1b29fc9ff!2z4Lig4Lit4Lio4Li44LiZ4Lii4LmMIOC4oeC4q-C4suC4p-C4tOC4l-C4ouC4suC4peC4seC4ouC5gOC4l-C4hOC5guC4meC5guC4peC4ouC4teC5gOC4reC4nuC4ouC4suC4oeC4o-C4tOC4meC4l-C4suC4o-C5jA!5e0!3m2!1sth!2sth!4v1634567890123!5m2!1sth!2sth" 
+                        style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Form validation
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    
+    form.addEventListener('submit', function(e) {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        if (!name || !email || !message) {
+            e.preventDefault();
+            alert('กรุณากรอกข้อมูลที่จำเป็นให้ครบถ้วน');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            e.preventDefault();
+            alert('กรุณากรอกอีเมลให้ถูกต้อง');
+            return;
+        }
+    });
+});
+</script>
+{% endblock %}

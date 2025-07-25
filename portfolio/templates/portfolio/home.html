@@ -1,0 +1,99 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}หน้าแรก - Portfolio{% endblock %}
+
+{% block content %}
+<div class="row align-items-center min-vh-100">
+    <div class="col-lg-6">
+        <div class="hero-text">
+            <h1 class="display-4 fw-bold mb-4">
+                สวัสดี! ฉันคือ <span class="text-warning">นักพัฒนา</span>
+            </h1>
+            <p class="lead mb-4">
+                ยินดีต้อนรับสู่ Portfolio ของฉัน ที่นี่คุณจะได้พบกับผลงานและประสบการณ์ในการพัฒนาเว็บไซต์
+                ด้วยเทคโนโลยีที่ทันสมัยและการออกแบบที่สวยงาม
+            </p>
+            <div class="d-flex gap-3 flex-wrap">
+                <a href="{% url 'portfolio:about' %}" class="btn-custom">
+                    <i class="fas fa-user me-2"></i>เรียนรู้เพิ่มเติม
+                </a>
+                <a href="{% url 'portfolio:contact' %}" class="btn-custom">
+                    <i class="fas fa-envelope me-2"></i>ติดต่อฉัน
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="glass p-4">
+            <!-- Carousel -->
+            <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             class="d-block w-100" alt="Web Development">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>การพัฒนาเว็บไซต์</h5>
+                            <p>สร้างเว็บไซต์ที่ทันสมัยและใช้งานง่าย</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             class="d-block w-100" alt="Mobile App">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>แอปพลิเคชันมือถือ</h5>
+                            <p>พัฒนาแอปสำหรับ iOS และ Android</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             class="d-block w-100" alt="Data Analysis">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>การวิเคราะห์ข้อมูล</h5>
+                            <p>ใช้ข้อมูลเพื่อสร้างมูลค่าทางธุรกิจ</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h2 class="text-center text-white mb-5">ความเชี่ยวชาญของฉัน</h2>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card-custom h-100 p-4 text-center">
+            <i class="fas fa-code fa-3x mb-3 text-warning"></i>
+            <h5>การพัฒนาเว็บไซต์</h5>
+            <p>พัฒนาเว็บไซต์ด้วย Django, React และเทคโนโลยีที่ทันสมัย</p>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card-custom h-100 p-4 text-center">
+            <i class="fas fa-mobile-alt fa-3x mb-3 text-warning"></i>
+            <h5>Responsive Design</h5>
+            <p>ออกแบบให้ใช้งานได้ดีในทุกอุปกรณ์ ทั้งคอมพิวเตอร์และมือถือ</p>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card-custom h-100 p-4 text-center">
+            <i class="fas fa-chart-line fa-3x mb-3 text-warning"></i>
+            <h5>การวิเคราะห์ข้อมูล</h5>
+            <p>ใช้ Python และ Machine Learning เพื่อวิเคราะห์และประมวลผลข้อมูล</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
